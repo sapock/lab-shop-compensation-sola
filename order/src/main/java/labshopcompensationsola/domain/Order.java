@@ -73,9 +73,9 @@ public class Order  {
     @PrePersist
     public void onPrePersist(){
         // Get request from Inventory
-        //labshopcompensationsola.external.Inventory inventory =
-        //    Application.applicationContext.getBean(labshopcompensationsola.external.InventoryService.class)
-        //    .getInventory(/** mapping value needed */);
+        labshopcompensationsola.external.Inventory inventory =
+           OrderApplication.applicationContext.getBean(labshopcompensationsola.external.InventoryService.class)
+           .getInventory(Long.valueOf(getProductId()));
 
     }
     @PreRemove
